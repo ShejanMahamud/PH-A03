@@ -18,6 +18,17 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- customized tailwind css -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .progress-ring-circle {
+          stroke-dasharray: 251.327, 251.327;
+          transition: stroke-dashoffset 0.35s;
+          transform: rotate(45deg);
+          transform-origin: 50% 50%;
+        }
+      }
+    </style>
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,5 +38,435 @@
     />
   </head>
   <!-- head end and body start-->
-  <body></body>
+  <body class="w-[90%] mx-auto font-[Manrope]">
+    <!-- header start -->
+    <header class="w-full mt-5">
+      <!-- nav menu start -->
+      <div class="navbar bg-base-100">
+        <!-- mobile menu -->
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M3.75 6.75H20.25M3.75 12H12.5M3.75 17.25H20.25"
+                  stroke="#131318"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a>Item 1</a></li>
+              <li>
+                <a>Parent</a>
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>
+          <a class="text-[#131318] font-extrabold lg:text-3xl text-xl"
+            >JohuHockey<span class="text-[#FF4240]">’</span>s</a
+          >
+        </div>
+        <!-- desktop menu -->
+        <div class="navbar-center hidden lg:flex items-center">
+          <ul
+            class="flex items-center gap-10 text-base font-medium text-[#424247]"
+          >
+            <li class="font-bold text-[#FF4240]"><a href="">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end gap-6 items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="hidden lg:inline-block"
+          >
+            <g clip-path="url(#clip0_5_6)">
+              <path
+                d="M3 10C3 10.9193 3.18106 11.8295 3.53284 12.6788C3.88463 13.5281 4.40024 14.2997 5.05025 14.9497C5.70026 15.5998 6.47194 16.1154 7.32122 16.4672C8.1705 16.8189 9.08075 17 10 17C10.9193 17 11.8295 16.8189 12.6788 16.4672C13.5281 16.1154 14.2997 15.5998 14.9497 14.9497C15.5998 14.2997 16.1154 13.5281 16.4672 12.6788C16.8189 11.8295 17 10.9193 17 10C17 9.08075 16.8189 8.1705 16.4672 7.32122C16.1154 6.47194 15.5998 5.70026 14.9497 5.05025C14.2997 4.40024 13.5281 3.88463 12.6788 3.53284C11.8295 3.18106 10.9193 3 10 3C9.08075 3 8.1705 3.18106 7.32122 3.53284C6.47194 3.88463 5.70026 4.40024 5.05025 5.05025C4.40024 5.70026 3.88463 6.47194 3.53284 7.32122C3.18106 8.1705 3 9.08075 3 10Z"
+                stroke="#89898B"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21 21L15 15"
+                stroke="#89898B"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_5_6">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <button
+            class="bg-[#FF4240] font-bold text-white lg:px-6 px-4 lg:py-3 py-2 text-lg rounded-lg"
+          >
+            <a href="#tickets">Get Ticket</a>
+          </button>
+        </div>
+      </div>
+      <!-- nav menu end -->
+      <!-- header started -->
+      <section class="w-full mt-10 mb-8 lg:my-16">
+        <div class="lg:h-[550px] h-[250px] relative w-full">
+          <div
+            class="bg-[#131318] rounded-2xl px-10 py-10 absolute z-50 bottom-10 right-10 w-[40%] hidden lg:inline-block"
+          >
+            <h1 class="text-white font-extrabold text-xl mb-3">
+              Meet all the heroes from the field
+            </h1>
+            <p class="text-[#ffffff99] font-medium">
+              Dit amet consectetur. Condimentum dignissim adipiscing aliquam
+              turpis placerat dolor. Purus urna in sit nullam proin.
+            </p>
+          </div>
+          <div class="carousel w-full h-full z-10">
+            <div id="slide1" class="carousel-item relative w-full">
+              <img
+                src="./images/header-image.png"
+                class="w-full rounded-2xl object-cover"
+              />
+              <div
+                class="absolute bottom-4 flex items-center gap-5 lg:px-6 lg:py-6 right-0 left-0 justify-center lg:justify-start"
+              >
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide5" class="">❮</a>
+                </div>
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide2" class="">❯</a>
+                </div>
+              </div>
+            </div>
+            <div id="slide2" class="carousel-item relative w-full">
+              <img
+                src="./images/header-banner-2.jpg"
+                class="w-full rounded-2xl object-cover"
+              />
+              <div
+                class="absolute bottom-4 flex items-center gap-5 lg:px-6 lg:py-6 right-0 left-0 justify-center lg:justify-start"
+              >
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide1" class="">❮</a>
+                </div>
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide3" class="">❯</a>
+                </div>
+              </div>
+            </div>
+            <div id="slide3" class="carousel-item relative w-full">
+              <img
+                src="./images/header-banner-3.jpg"
+                class="w-full rounded-2xl object-cover"
+              />
+              <div
+                class="absolute bottom-4 flex items-center gap-5 lg:px-6 lg:py-6 right-0 left-0 justify-center lg:justify-start"
+              >
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide2" class="">❮</a>
+                </div>
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide4" class="">❯</a>
+                </div>
+              </div>
+            </div>
+            <div id="slide4" class="carousel-item relative w-full">
+              <img
+                src="./images/header-banner-4.jpg"
+                class="w-full rounded-2xl object-cover"
+              />
+              <div
+                class="absolute bottom-4 flex items-center gap-5 lg:px-6 lg:py-6 right-0 left-0 justify-center lg:justify-start"
+              >
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide3" class="">❮</a>
+                </div>
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide5" class="">❯</a>
+                </div>
+              </div>
+            </div>
+            <div id="slide5" class="carousel-item relative w-full">
+              <img
+                src="./images/header-banner-5.jpg"
+                class="w-full rounded-2xl object-cover"
+              />
+              <div
+                class="absolute bottom-4 flex items-center gap-5 lg:px-6 lg:py-6 right-0 left-0 justify-center lg:justify-start"
+              >
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide4" class="">❮</a>
+                </div>
+                <div
+                  class="h-10 w-10 bg-[#131318] rounded-full hover:bg-white text-white hover:text-[#131318] flex items-center justify-center"
+                >
+                  <a href="#slide1" class="">❯</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- header slider end -->
+      <section class="w-full lg:hidden">
+        <div class="bg-[#131318] rounded-2xl px-5 py-5">
+          <h1 class="text-white font-extrabold text-lg mb-3">
+            Meet all the heroes from the field
+          </h1>
+          <p class="text-[#ffffff99] font-medium text-sm">
+            Dit amet consectetur. Condimentum dignissim adipiscing aliquam
+            turpis placerat dolor. Purus urna in sit nullam proin.
+          </p>
+        </div>
+      </section>
+    </header>
+    <!-- header end -->
+    <hr
+      class="w-[90%] mx-auto border-b lg:border-b-2 border-dashed border-[#13131833] opacity-50 lg:my-20 my-16"
+    />
+    <!-- club info section -->
+    <section class="w-full mx-auto">
+      <h1 class="text-4xl font-extrabold text-[#131318] text-center mb-6">
+        Professional Hockeys Club
+      </h1>
+      <p class="text-[#13131899] text-center lg:w-[50%] w-full mx-auto">
+        Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis
+        placerat dolor. Purus urna in sit nullam proin.
+      </p>
+      <hr
+        class="w-[90%] mx-auto border-b lg:border-b-2 border-dashed border-[#13131833] opacity-50 my-16"
+      />
+      <div
+        class="grid grid-cols-1 row-auto lg:grid-cols-4 w-full gap-12 lg:gap-10"
+      >
+        <!-- 1st progress circle -->
+        <div class="flex w-full justify-center items-center flex-col gap-3">
+          <div class="relative w-40 h-40">
+            <svg class="w-full h-full font-extrabold" viewBox="0 0 100 100">
+              <!-- Background circle -->
+              <circle
+                class="text-[#E7E7E8] stroke-current"
+                stroke-width="8"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+              ></circle>
+
+              <!-- Progress circle -->
+              <circle
+                class="text-[#FF4240] progress-ring-circle stroke-current"
+                stroke-width="8"
+                stroke-linecap="round"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+                stroke-dasharray="251.327"
+                stroke-dashoffset="calc(251.327 - (251.327 * 87) / 100)"
+              ></circle>
+
+              <!-- Center text -->
+              <text
+                x="50"
+                y="50"
+                font-family="Manrope"
+                font-size="18"
+                text-anchor="middle"
+                dominant-baseline="middle"
+              >
+                87%
+              </text>
+            </svg>
+          </div>
+
+          <h1 class="text-[#131318] font-semibold text-xl">Prayer Facility</h1>
+          <p class="text-center text-[#13131899]">
+            Amet consectetur. Condimentum dignissim adipiscing.
+          </p>
+        </div>
+        <!-- 2nd progress circle -->
+        <div class="flex w-full justify-center items-center flex-col gap-3">
+          <div class="relative w-40 h-40">
+            <svg class="w-full h-full font-extrabold" viewBox="0 0 100 100">
+              <!-- Background circle -->
+              <circle
+                class="text-[#E7E7E8] stroke-current"
+                stroke-width="8"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+              ></circle>
+
+              <!-- Progress circle -->
+              <circle
+                class="text-[#49D293] progress-ring-circle stroke-current"
+                stroke-width="8"
+                stroke-linecap="round"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+                stroke-dasharray="251.327"
+                stroke-dashoffset="calc(251.327 - (251.327 * 95) / 100)"
+              ></circle>
+
+              <!-- Center text -->
+              <text
+                x="50"
+                y="50"
+                font-family="Manrope"
+                font-size="18"
+                text-anchor="middle"
+                alignment-baseline="middle"
+              >
+                95%
+              </text>
+            </svg>
+          </div>
+          <h1 class="text-[#131318] font-semibold text-xl">
+            Experienced Coach
+          </h1>
+          <p class="text-center text-[#13131899]">
+            Amet consectetur. Condimentum dignissim adipiscing.
+          </p>
+        </div>
+        <!-- 3rd progress bar -->
+        <div class="flex w-full justify-center items-center flex-col gap-3">
+          <div class="relative w-40 h-40">
+            <svg class="w-full h-full font-extrabold" viewBox="0 0 100 100">
+              <!-- Background circle -->
+              <circle
+                class="text-[#E7E7E8] stroke-current"
+                stroke-width="8"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+              ></circle>
+
+              <!-- Progress circle -->
+              <circle
+                class="text-[#FFB546] progress-ring-circle stroke-current"
+                stroke-width="8"
+                stroke-linecap="round"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+                stroke-dasharray="251.327"
+                stroke-dashoffset="calc(251.327 - (251.327 * 90) / 100)"
+              ></circle>
+
+              <!-- Center text -->
+              <text
+                x="50"
+                y="50"
+                font-family="Manrope"
+                font-size="18"
+                text-anchor="middle"
+                alignment-baseline="middle"
+              >
+                90%
+              </text>
+            </svg>
+          </div>
+          <h1 class="text-[#131318] font-semibold text-xl">Senior Player</h1>
+          <p class="text-center text-[#13131899]">
+            Amet consectetur. Condimentum dignissim adipiscing.
+          </p>
+        </div>
+        <!-- 4th progress bar -->
+        <div class="flex w-full justify-center items-center flex-col gap-3">
+          <div class="relative w-40 h-40">
+            <svg class="w-full h-full font-extrabold" viewBox="0 0 100 100">
+              <!-- Background circle -->
+              <circle
+                class="text-[#E7E7E8] stroke-current"
+                stroke-width="8"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+              ></circle>
+
+              <!-- Progress circle -->
+              <circle
+                class="text-[#4C8DF1] progress-ring-circle stroke-current"
+                stroke-width="8"
+                stroke-linecap="round"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="transparent"
+                stroke-dasharray="251.327"
+                stroke-dashoffset="calc(251.327 - (251.327 * 80) / 100)"
+              ></circle>
+
+              <!-- Center text -->
+              <text
+                x="50"
+                y="50"
+                font-family="Manrope"
+                font-size="18"
+                text-anchor="middle"
+                alignment-baseline="middle"
+              >
+                80%
+              </text>
+            </svg>
+          </div>
+          <h1 class="text-[#131318] font-semibold text-xl">Training Ground</h1>
+          <p class="text-center text-[#13131899]">
+            Amet consectetur. Condimentum dignissim adipiscing.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
