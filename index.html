@@ -22,13 +22,24 @@
     <style type="text/tailwindcss">
       @layer utilities {
         .progress-ring-circle {
-          stroke-dasharray: 251.327, 251.327;
-          transition: stroke-dashoffset 0.35s;
           transform: rotate(45deg);
           transform-origin: 50% 50%;
         }
       }
     </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              "program-1": "url('./images/program-1.png')",
+              "program-2": "url('./images/program-2.png')",
+              "program-3": "url('./images/program-3.png')",
+            },
+          },
+        },
+      };
+    </script>
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -307,7 +318,7 @@
                 r="40"
                 fill="transparent"
                 stroke-dasharray="251.327"
-                stroke-dashoffset="calc(251.327 - (251.327 * 87) / 100)"
+                stroke-dashoffset="87"
               ></circle>
 
               <!-- Center text -->
@@ -353,7 +364,7 @@
                 r="40"
                 fill="transparent"
                 stroke-dasharray="251.327"
-                stroke-dashoffset="calc(251.327 - (251.327 * 95) / 100)"
+                stroke-dashoffset="95"
               ></circle>
 
               <!-- Center text -->
@@ -363,7 +374,7 @@
                 font-family="Manrope"
                 font-size="18"
                 text-anchor="middle"
-                alignment-baseline="middle"
+                dominant-baseline="middle"
               >
                 95%
               </text>
@@ -400,7 +411,7 @@
                 r="40"
                 fill="transparent"
                 stroke-dasharray="251.327"
-                stroke-dashoffset="calc(251.327 - (251.327 * 90) / 100)"
+                stroke-dashoffset="90"
               ></circle>
 
               <!-- Center text -->
@@ -410,7 +421,7 @@
                 font-family="Manrope"
                 font-size="18"
                 text-anchor="middle"
-                alignment-baseline="middle"
+                dominant-baseline="middle"
               >
                 90%
               </text>
@@ -437,7 +448,7 @@
 
               <!-- Progress circle -->
               <circle
-                class="text-[#4C8DF1] progress-ring-circle stroke-current"
+                class="text-[#FF4240] progress-ring-circle stroke-current"
                 stroke-width="8"
                 stroke-linecap="round"
                 cx="50"
@@ -445,7 +456,7 @@
                 r="40"
                 fill="transparent"
                 stroke-dasharray="251.327"
-                stroke-dashoffset="calc(251.327 - (251.327 * 80) / 100)"
+                stroke-dashoffset="80"
               ></circle>
 
               <!-- Center text -->
@@ -455,7 +466,7 @@
                 font-family="Manrope"
                 font-size="18"
                 text-anchor="middle"
-                alignment-baseline="middle"
+                dominant-baseline="middle"
               >
                 80%
               </text>
@@ -465,6 +476,85 @@
           <p class="text-center text-[#13131899]">
             Amet consectetur. Condimentum dignissim adipiscing.
           </p>
+        </div>
+      </div>
+    </section>
+    <hr
+      class="w-[90%] mx-auto border-b lg:border-b-2 border-dashed border-[#13131833] opacity-50 my-16"
+    />
+    <!-- programs sec -->
+    <section class="w-full mx-auto">
+      <h1 class="text-4xl font-extrabold text-[#131318] text-center mb-6">
+        Program Sections
+      </h1>
+      <p class="text-[#13131899] text-center lg:w-[50%] w-full mx-auto">
+        Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis
+        placerat dolor. Purus urna in sit nullam proin.
+      </p>
+      <hr
+        class="w-[90%] mx-auto border-b lg:border-b-2 border-dashed border-[#13131833] opacity-50 my-16"
+      />
+      <div
+        class="grid lg:grid-cols-2 lg:grid-rows-[350px_450px] grid-cols-1 grid-rows-3 gap-10"
+      >
+        <div
+          class="bg-program-1 bg-no-repeat bg-center bg-cover rounded-2xl overflow-hidden"
+        >
+          <div
+            class="w-full h-full bg-[#13131880] px-10 py-10 flex items-end justify-start"
+          >
+            <div class="">
+              <h1 class="text-white font-extrabold text-2xl">Junior Program</h1>
+              <p class="font-medium leading-[26px] text-white my-4">
+                Dolor sit amet consectetur. Ut urna diam quis sagittis. Elit
+                elit enim sagittis turpis in magna. Id et sed euismod natoque
+                amet nunc morbi nulla. Tortor congue sed et in.
+              </p>
+              <button class="bg-[#FF4240] px-4 py-2 text-white font-extrabold">
+                Register Now!
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 2nd -->
+        <div
+          class="bg-program-2 bg-no-repeat bg-center bg-cover rounded-2xl overflow-hidden"
+        >
+          <div
+            class="w-full h-full bg-[#13131880] px-10 py-10 flex items-end justify-start"
+          >
+            <div class="">
+              <h1 class="text-white font-extrabold text-2xl">Junior Program</h1>
+              <p class="font-medium leading-[26px] text-white my-4">
+                Dolor sit amet consectetur. Ut urna diam quis sagittis. Elit
+                elit enim sagittis turpis in magna. Id et sed euismod natoque
+                amet nunc morbi nulla. Tortor congue sed et in.
+              </p>
+              <button class="bg-[#FF4240] px-4 py-2 text-white font-extrabold">
+                Register Now!
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 3rd -->
+        <div
+          class="bg-program-3 bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden lg:col-start-1 lg:col-end-3"
+        >
+          <div
+            class="w-full h-full bg-[#13131880] px-10 py-10 flex items-end justify-start"
+          >
+            <div class="">
+              <h1 class="text-white font-extrabold text-2xl">Junior Program</h1>
+              <p class="font-medium leading-[26px] text-white my-4">
+                Dolor sit amet consectetur. Ut urna diam quis sagittis. Elit
+                elit enim sagittis turpis in magna. Id et sed euismod natoque
+                amet nunc morbi nulla. Tortor congue sed et in.
+              </p>
+              <button class="bg-[#FF4240] px-4 py-2 text-white font-extrabold">
+                Register Now!
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
